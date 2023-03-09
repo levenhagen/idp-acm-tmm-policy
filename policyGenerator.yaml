@@ -13,6 +13,7 @@ policies:
   - name: add-acm-tmm-hub-idp-provider
     manifests:
       - path: input/tmm-hub-idp.yaml
+        remediationAction: "enforce"
   - name: add-acm-tmm-hub-admin-cluster-role
     manifests:
      - path: input/tmm-hub-cluster-role.yaml 
