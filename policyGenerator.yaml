@@ -6,17 +6,27 @@ placementBindingDefaults:
   name: acm-tmm-idp-placement-binding
 policyDefaults:
   namespace: policies
-  orderPolicies: true
   placement:
     name: acm-tmm-idp-placement
-    labelSelector:
-      matchExpressions:
-        - {key: vendor, operator: In, values: ["OpenShift"]}
-        - {key: name, operator: NotIn, values: ["local-cluster"]}
+      clusterSelector:
+        name: tmm-3-node-compact
 policies:
   - name: add-acm-tmm-hub-idp-provider
     manifests:
-      - path: input/tmm-hub-idp.yaml
+      - path: input
+        patches:
+          - apiVersion: config.openshift.io/v1
+            kind: OAuth
+            metadata:
+              name: cluster
+            spec:
+              identityProviders:
+                - name: acm-tmm-htpasswd-provider 
+                  mappingMethod: claim 
+                  type: HTPasswd
+                  htpasswd:
+                    fileData:
+                      name: acm-tmm-htpass-secret
 #  - name: add-acm-tmm-hub-idp-provider
 #    manifests:
 #      - path: input/tmm-hub-cluster-role.yaml 
