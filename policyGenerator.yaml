@@ -7,9 +7,7 @@ placementBindingDefaults:
 policyDefaults:
   namespace: policies
   placement:
-    name: acm-tmm-idp-placement
-      clusterSelector:
-        name: tmm-3-node-compact
+    placementPath: input/placement.yaml
 policies:
   - name: add-acm-tmm-hub-idp-provider
     manifests:
