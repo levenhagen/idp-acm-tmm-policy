@@ -6,13 +6,13 @@ policyDefaults:
   namespace: policies
   categories:
       - CM Configuration Management
-  policySets: []
-  orderPolicies: true
-  placements:
-    labelSelector:
-      matchExpressions:
-        - {key: vendor, operator: In, values: ["OpenShift"]}
-        - {key: name, operator: NotIn, values: ["local-cluster"]}
+  
+orderPolicies: true
+placements:
+  labelSelector:
+    matchExpressions:
+      - {key: vendor, operator: In, values: ["OpenShift"]}
+      - {key: name, operator: NotIn, values: ["local-cluster"]}
 policies:
   - name: add-acm-tmm-hub-idp-provider
     manifests:
