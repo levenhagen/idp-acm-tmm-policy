@@ -1,0 +1,12 @@
+apiVersion: config.openshift.io/v1
+kind: OAuth
+metadata:
+  name: cluster
+spec:
+  identityProviders:
+  - name: acm-tmm-htpasswd-provider 
+    mappingMethod: claim 
+    type: HTPasswd
+    htpasswd:
+      fileData:
+        name: '{{ hub fromSecret "openshift-config" "acm-tmm-htpass-secret" "" | base64dec hub}}'
