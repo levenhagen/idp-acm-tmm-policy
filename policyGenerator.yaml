@@ -8,7 +8,6 @@ policyDefaults:
   namespace: policies
   placement:
     placementPath: input/placement.yaml
-  orderPolicies: true
 policies:
   - name: add-acm-tmm-hub-idp-provider
     manifests:
