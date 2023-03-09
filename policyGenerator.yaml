@@ -13,9 +13,9 @@ policies:
   - name: add-acm-tmm-hub-idp-provider
     manifests:
       - path: input/tmm-hub-idp.yaml
-#  - name: add-acm-tmm-hub-idp-provider
-#    manifests:
-#     - path: input/tmm-hub-cluster-role.yaml 
+  - name: add-acm-tmm-hub-idp-provider
+    manifests:
+     - path: input/tmm-hub-cluster-role.yaml 
 #  - name: remove-kubeadmin-password
 #    complianceType: "mustnothave"
 #    manifests:
