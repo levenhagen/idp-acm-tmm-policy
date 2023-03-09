@@ -2,16 +2,17 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
   name: policy-configure-acm-users
+placementBindingDefaults:
+  name: acm-tmm-idp-placement-binding
 policyDefaults:
   namespace: policies
-  categories:
-    - CM Configuration Management 
-orderPolicies: true
-placements:
-  labelSelector:
-    matchExpressions:
-      - {key: vendor, operator: In, values: ["OpenShift"]}
-      - {key: name, operator: NotIn, values: ["local-cluster"]}
+  orderPolicies: true
+  placement:
+    name: acm-tmm-idp-placement
+    labelSelector:
+      matchExpressions:
+        - {key: vendor, operator: In, values: ["OpenShift"]}
+        - {key: name, operator: NotIn, values: ["local-cluster"]}
 policies:
   - name: add-acm-tmm-hub-idp-provider
     manifests:
