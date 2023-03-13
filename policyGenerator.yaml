@@ -8,7 +8,7 @@ policyDefaults:
   namespace: openshift-config
   placement:
     placementPath: input/placement.yaml
-  orderPolicies: true
+  #orderPolicies: true
 policies:
   - name: add-idp-secret
     manifests:
@@ -17,10 +17,11 @@ policies:
   - name: add-acm-tmm-hub-idp-provider
     manifests:
       - path: input/tmm-hub-idp.yaml
-  - name: add-acm-tmm-hub-admin-cluster-role
-    manifests:
-     - path: input/tmm-hub-cluster-role.yaml 
-  - name: remove-kubeadmin-password
-    complianceType: "mustnothave"
-    manifests:
-      - path: input/remove-kubeadmin-pass.yaml
+        remediationAction: "enforce"
+#  - name: add-acm-tmm-hub-admin-cluster-role
+#    manifests:
+#     - path: input/tmm-hub-cluster-role.yaml 
+#  - name: remove-kubeadmin-password
+#    complianceType: "mustnothave"
+#    manifests:
+#      - path: input/remove-kubeadmin-pass.yaml
