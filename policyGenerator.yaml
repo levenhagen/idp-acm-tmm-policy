@@ -8,12 +8,8 @@ policyDefaults:
   namespace: policies
   placement:
     placementPath: input/placement.yaml
-  orderPolicies: true
+  #orderPolicies: true
 policies:
-#  - name: idp-secret
-#    manifests:
-#      - path: input/idp-secret.yaml
-#        remediationAction: "enforce"
   - name: add-acm-tmm-hub-idp-provider
     manifests:
       - path: input/tmm-hub-idp.yaml
