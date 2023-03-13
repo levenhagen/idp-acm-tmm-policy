@@ -5,11 +5,15 @@ metadata:
 placementBindingDefaults:
   name: acm-tmm-idp-placement-binding
 policyDefaults:
-  namespace: policies
+  namespace: openshift-config
   placement:
     placementPath: input/placement.yaml
   #orderPolicies: true
 policies:
+  - name: add-idp-secret
+    manifests:
+      - path: input/idp-secret.yaml
+    remediationAction: "enforce"
   - name: add-acm-tmm-hub-idp-provider
     manifests:
       - path: input/tmm-hub-idp.yaml
