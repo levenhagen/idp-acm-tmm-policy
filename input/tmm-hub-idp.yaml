@@ -9,4 +9,4 @@ spec:
     type: HTPasswd
     htpasswd:
       fileData:
-        name: '{{ fromSecret "openshift-config" "acm-tmm-htpass-secret" "" | base64dec }}'
+        name: acm-tmm-htpass-secret
