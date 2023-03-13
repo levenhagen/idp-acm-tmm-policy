@@ -14,10 +14,10 @@ policies:
     manifests:
       - path: input/tmm-hub-idp.yaml
         remediationAction: "enforce"
-  - name: add-acm-tmm-hub-admin-cluster-role
-    manifests:
-     - path: input/tmm-hub-cluster-role.yaml 
-  - name: remove-kubeadmin-password
-    complianceType: "mustnothave"
-    manifests:
-      - path: input/remove-kubeadmin-pass.yaml
+#  - name: add-acm-tmm-hub-admin-cluster-role
+#    manifests:
+#     - path: input/tmm-hub-cluster-role.yaml 
+#  - name: remove-kubeadmin-password
+#    complianceType: "mustnothave"
+#    manifests:
+#      - path: input/remove-kubeadmin-pass.yaml
