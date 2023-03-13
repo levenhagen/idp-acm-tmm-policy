@@ -5,7 +5,7 @@ metadata:
 placementBindingDefaults:
   name: acm-tmm-idp-placement-binding
 policyDefaults:
-  namespace: opesnhift-config
+  namespace: openshift-config
   placement:
     placementPath: input/placement.yaml
   orderPolicies: true
