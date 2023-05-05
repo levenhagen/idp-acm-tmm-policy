@@ -2,13 +2,11 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
   name: policy-configure-acm-users
-placementBindingDefaults:
-  name: acm-tmm-idp-placement-binding
 policyDefaults:
   namespace: openshift-config
   placement:
     placementPath: input/placement.yaml
-  #orderPolicies: true
+  orderPolicies: true
 policies:
   - name: add-idp-secret
     manifests:
