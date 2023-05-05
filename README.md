@@ -9,11 +9,11 @@ The policy will provide a basic IDP configuration for managed k8s clusters as a 
 1. Have your own htpasswd file.  
 
     - On a bastion machine, your can create your own htpasswd file. Example: 
-    - ```$ htpasswd -c -B -b </path/to/users.htpasswd> <user_name> <password>```
+    - ```$ htpasswd -c -B -b acmusers.htpasswd acmusers letsgoacm$```
 
 2. Create a secret in your OpenShift Hub Cluster by running:
 
-    - ```oc create secret generic htpass-secret --from-file=htpasswd=<path_to_users.htpasswd> -n openshift-config```
+    - ```oc create secret generic htpass-secret --from-file=htpasswd=acmusers.htpasswd -n openshift-config```
 
 
 ### Steps:
