@@ -6,7 +6,7 @@ policyDefaults:
   namespace: openshift-config
   placement:
     placementPath: input/placement.yaml
-orderPolicies: true
+  orderPolicies: true
 policies:
   - name: add-idp-secret
     manifests:
