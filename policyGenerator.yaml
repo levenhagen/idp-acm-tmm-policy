@@ -12,18 +12,26 @@ policies:
     manifests:
       - path: input/idp-secret.yaml
     remediationAction: "enforce"
+    policySets:
+      - acm-idp-policy-set
   - name: add-acm-idp-provider
     manifests:
       - path: input/tmm-hub-idp.yaml
     remediationAction: "enforce"
+    policySets:
+      - acm-idp-policy-set
   - name: add-acm-idp-admin-cluster-role
     manifests:
      - path: input/tmm-hub-cluster-role.yaml
     remediationAction: "enforce"
+    policySets:
+      - acm-idp-policy-set
   - name: remove-kubeadmin-password
     complianceType: "mustnothave"
     manifests:
       - path: input/remove-kubeadmin-pass.yaml
+      policySets:
+      - acm-idp-policy-set
 policySets:
   - description: This policySet applies several policies that will import a secret from the Hub cluster containing user credentials, apply them as a new identity provider for managed clusters, give them cluster-admin rights, and provide the possibility to remove the kubeadmin password if all the previous policies were succesfully applied.
     name: acm-idp-policy-set
