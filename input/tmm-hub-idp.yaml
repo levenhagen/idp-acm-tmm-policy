@@ -9,4 +9,4 @@ spec:
     type: HTPasswd
     htpasswd:
       fileData:
-        name: acm-tmm-htpass-secret
+        name: acm-htpass-secret
