@@ -14,11 +14,11 @@ policies:
     manifests:
       - path: input/idp-secret.yaml
     remediationAction: "enforce"
-  - name: add-acm-hub-idp-provider
+  - name: add-acm-idp-provider
     manifests:
       - path: input/tmm-hub-idp.yaml
     remediationAction: "enforce"
-  - name: add-acm-admin-cluster-role
+  - name: add-acm-idp-admin-cluster-role
     manifests:
      - path: input/tmm-hub-cluster-role.yaml
     remediationAction: "enforce"
