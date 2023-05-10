@@ -25,9 +25,7 @@ policies:
     manifests:
       - path: input/remove-kubeadmin-pass.yaml
 policySets:
-  - description: This policySet applies several policies that will import a secret from the Hub cluster containing user credentials, 
-    apply them as a new identity provider for managed clusters, give them cluster-admin rights, and provide the possibility to remove the kubeadmin password
-    if all the previous policies were succesfully applied.
+  - description: This policySet applies several policies that will import a secret from the Hub cluster containing user credentials, apply them as a new identity provider for managed clusters, give them cluster-admin rights, and provide the possibility to remove the kubeadmin password if all the previous policies were succesfully applied.
     name: acm-idp-policy-set
     placement:
       placementPath: input/placement.yaml
