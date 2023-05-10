@@ -17,7 +17,7 @@ This policy will provide a basic IDP configuration for managed k8s clusters as a
 
 3. Create a secret in your OpenShift Hub Cluster by running:
 
-    - ```oc create secret generic htpass-secret --from-file=htpasswd=acmusers.htpasswd -n policies```
+    - ```oc create secret generic acm-htpass-secret --from-file=htpasswd=acmusers.htpasswd -n policies```
     
     The policy will resolve this secret before applying it to managed clusters.
 
@@ -39,3 +39,5 @@ This policyGenerator will generate a policySet with 4 policies.
 
 4. When policy #3 is compliant(only when policy #2 is compliant), policy #4 (remove-kubeadmin-password) will inform if the managed cluster has the kubeadmin password still enabled. You can enforce this policy if you want the policy to remove the kubeadmin pass.
 
+### Note
+You can customize and add users as you want in the acm-htpass-secret, but keep in mind some changes may also be required in the 3rd policy (ClusterRole).
