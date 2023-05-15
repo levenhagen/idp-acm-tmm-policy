@@ -2,7 +2,7 @@
 
 The main goal of this repository is to create a k8s Policy using RHACM & Policy Generator.
 
-This policy will provide a basic IDP configuration for managed k8s clusters as a day-2 operation and introduce the possibility to remove the kubeadmin password.
+This policy will provide a basic IDP configuration for managed OpenShift clusters as a day-2 operation and introduce the possibility to remove the kubeadmin password.
 
 ### Pre-requisite:
 
