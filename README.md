@@ -1,4 +1,4 @@
-# IDP k8s Policy - RHACM + Policy Generator
+# htpasswd IDP k8s Policy - RHACM + Policy Generator
 
 The main goal of this repository is to create a k8s Policy using RHACM & Policy Generator.
 
